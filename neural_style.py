@@ -23,7 +23,7 @@ BETA1 = 0.9
 BETA2 = 0.999
 EPSILON = 1e-08
 STYLE_SCALE = 1.0
-ITERATIONS = 1000
+ITERATIONS = 50
 VGG_PATH = "imagenet-vgg-verydeep-19.mat"
 POOLING = "max"
 
@@ -236,7 +236,7 @@ def main():
 
     parser = build_parser()
     options = parser.parse_args()
-
+    print ("options =", options)
     if not os.path.isfile(options.network):
         parser.error(
             "Network %s does not exist. (Did you forget to " "download it?)" % options.network
